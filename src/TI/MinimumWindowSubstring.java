@@ -6,7 +6,7 @@ import java.util.Map;
 public class MinimumWindowSubstring {
 	public String minWindow(String source, String target) {
 	    // Write your solution here
-		//corner cases
+		// corner cases
 		char[] s = source.toCharArray();
 		char[] t = target.toCharArray();
 		
