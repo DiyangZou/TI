@@ -1,5 +1,6 @@
 package test;
 
+import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -32,6 +33,17 @@ public class test {
 		
 	}
 	
+	private BigDecimal testMinus() {
+		BigDecimal a = BigDecimal.ZERO;
+		BigDecimal b = BigDecimal.ZERO;
+		
+		a = a.add(BigDecimal.valueOf(12.22));
+		b = b.add(BigDecimal.valueOf(1));
+		System.out.println(b.negate());
+		return b.add(a.negate());
+	}
+	
+	
 	public static void main(String[] args) {
 		int a1 = 1, a2 = 2;
 		Integer b1 = 1, b2 = 2;
@@ -44,8 +56,8 @@ public class test {
 //		System.out.println(a2);
 //		System.out.println(b1);
 //		System.out.println(b2);
-		s.SortedSetTest(new int[] {1, 2,3,4,5, 11});
-		
+//		s.SortedSetTest(new int[] {1, 2,3,4,5, 11});
+		System.out.print(s.testMinus());
 		
 	}
 	
