@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class test {
+public class CodeTest {
 	
 	public void aaa(int a, int b) {
 		int tmp = a;
@@ -48,7 +48,7 @@ public class test {
 		int a1 = 1, a2 = 2;
 		Integer b1 = 1, b2 = 2;
 		
-		test s = new test();
+		CodeTest s = new CodeTest();
 //		s.aaa(a1, a2);
 //		s.bbb(b1, b2);
 //		
