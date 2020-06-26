@@ -1,64 +1,52 @@
 package test;
 
-import java.math.BigDecimal;
-import java.util.Iterator;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
-public class test {
+public class CodeTest {
 	
-	public void aaa(int a, int b) {
-		int tmp = a;
-		a = b;
-		b = tmp;
-	}
-	
-	public void bbb(Integer a, Integer b) {
-		int tmp = a;
-		a = b;
-		b = tmp;
-	}
-	
-	public void SortedSetTest(int[] input) {
-		TreeSet<Integer> set = new TreeSet<>();
-		for(int i: input) {
-			set.add(i);
-		}
-		
-		SortedSet<Integer> sub = set.subSet(0, 10);
-		Iterator<Integer> itr = sub.iterator();
-		while(itr.hasNext()) {
-			System.out.println(itr.next());
-		}
-		
-	}
-	
-	private BigDecimal testMinus() {
-		BigDecimal a = BigDecimal.ZERO;
-		BigDecimal b = BigDecimal.ZERO;
-		
-		a = a.add(BigDecimal.valueOf(12.22));
-		b = b.add(BigDecimal.valueOf(1));
-		System.out.println(b.negate());
-		return b.add(a.negate());
-	}
-	
-	
-	public static void main(String[] args) {
-		int a1 = 1, a2 = 2;
-		Integer b1 = 1, b2 = 2;
-		
-		test s = new test();
-//		s.aaa(a1, a2);
-//		s.bbb(b1, b2);
-//		
-//		System.out.println(a1);
-//		System.out.println(a2);
-//		System.out.println(b1);
-//		System.out.println(b2);
-//		s.SortedSetTest(new int[] {1, 2,3,4,5, 11});
-		System.out.print(s.testMinus());
-		
-	}
+	public static void main(String[] args) throws IOException {
+	    InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8);
+	    BufferedReader in = new BufferedReader(reader);
+	    String line;
+	    while ((line = in.readLine()) != null) {
+	      List<String> result = decoder(line);
+	      for(String s : result){
+	        System.out.println(s);
+	      }
+	    }
+	  }
+	  
+	  private static List<String> decoder(String input){
+	    List<String> result = new ArrayList<>();
+	    if(input.isEmpty()) return result;
+	    
+	    String[] map = new String[]{"", "abc", "def", "ghi","jkl","mno", "pqr", "stu", "vwx", "yz"};
+	    char[] in = input.toCharArray();StringBuilder sb = new StringBuilder();
+	    helper(result, sb, in, map, 0);
+	    return result;
+	  }
+	  
+	  private static void helper(List<String> result, StringBuilder sb, char[] in, String[] map, int idx){
+	     if(idx == in.length){
+	       String res = sb.toString();
+	       result.add(res);
+	       return;
+	     }
+	     int curNum = Character.getNumericValue(in[idx]);
+	     String value = map[curNum];
+	     char[] val = value.toCharArray();
+	    
+	     for(int i = 0; i < val.length; i++){
+	       sb.append(val[i]);
+	       helper(result, sb, in, map, idx+1);
+	       sb.deleteCharAt(sb.length() - 1);
+	     }
+	    
+	  }
 	
 }
