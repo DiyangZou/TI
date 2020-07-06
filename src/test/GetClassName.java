@@ -14,6 +14,6 @@ public class GetClassName {
 	
 	public static void main(String[] args) {
 		GetClassName s = new GetClassName();
-		s.getClassName("Minimum Time to Collect All Apples in a Tree");
+		s.getClassName("Prison Cells After N Days");
 	}
 }
