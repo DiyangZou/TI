@@ -14,6 +14,6 @@ public class GetClassName {
 	
 	public static void main(String[] args) {
 		GetClassName s = new GetClassName();
-		s.getClassName("Prison Cells After N Days");
+		s.getClassName("Minimum Possible Integer After at Most K Adjacent Swaps On Digits");
 	}
 }
