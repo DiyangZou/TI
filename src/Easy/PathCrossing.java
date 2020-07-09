@@ -26,9 +26,4 @@ public class PathCrossing {
 		}
 		return false;
 	}
-	
-	public static void main(String[] args) {
-		PathCrossing s = new PathCrossing();
-		System.out.println(s.isPathCrossing("NESWW"));
-	}
 }
