@@ -1,8 +1,8 @@
 package test;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class TestIn2{
@@ -13,31 +13,57 @@ public class TestIn2{
 		return b;
 	}
 	
-	public static void main(String[] args) {
-		TestIn2 s = new TestIn2();
-		System.out.println(s.test());
-		
-		StringBuilder sb = new StringBuilder();
-		int n = 4;
-		sb.append("1/3");
-		sb.append(n);
-		System.out.println(sb.toString());
-		
-		List<Integer> res = new ArrayList<>();
-		res.add(1234);
-		res.add(43424);
-		
-		//String testA = StringUtils.join(intList, "|");
-		
-		String as = res.toArray().toString();
-		
-		String result = res.stream()
-			      .map(asa -> String.valueOf(asa))
-			      .collect(Collectors.joining(","));
-		
-		System.out.println(result);
-		
+	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
+		Person a = new Person("a", "b", null);
+		Field[] f = a.getClass().getDeclaredFields();
+		List<String> lis = new ArrayList<>();
+
+		lis.add(a.getFname());
+		lis.add(a.getLname());
+		lis.add(a.getAge());
+		lis.add("0");
+		lis.add("1");
+		lis.add("2");
+		lis.add("3");
+		lis.add("4");
+		lis.add("5");
 		
 	}
 
+}
+class Person{
+	public String fname;
+	public String lname;
+	public String age;
+	
+	public Person(String fname, String lname, String age) {
+		this.fname = fname;
+		this.lname = lname;
+		this.age = age;
+	}
+	
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getFname(){
+		return fname;
+	}
+	
 }
