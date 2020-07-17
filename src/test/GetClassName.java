@@ -14,6 +14,6 @@ public class GetClassName {
 	
 	public static void main(String[] args) {
 		GetClassName s = new GetClassName();
-		s.getClassName("Number of Steps to Reduce a Number in Binary Representation to One");
+		s.getClassName("Flatten a Multilevel Doubly Linked List");
 	}
 }
