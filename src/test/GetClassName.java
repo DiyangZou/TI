@@ -14,6 +14,6 @@ public class GetClassName {
 	
 	public static void main(String[] args) {
 		GetClassName s = new GetClassName();
-		s.getClassName("Flatten a Multilevel Doubly Linked List");
+		s.getClassName("Find a Value of a Mysterious Function Closest to Target");
 	}
 }

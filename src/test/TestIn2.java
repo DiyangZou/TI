@@ -17,17 +17,9 @@ public class TestIn2{
 	
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
 		
-		List<Integer> one = new ArrayList<>();
-		List<Integer> two = null;
-		List<Integer> all = new ArrayList<>();
+		System.out.println('1' - '0');
 		
-		two = two==null ? new ArrayList<>(): two;
-		one.add(1);
-		all.addAll(one);
-		all.addAll(two);
 		
-		int a = -2147483648;
-		int b = a / 2;
 		
 		
 	}
