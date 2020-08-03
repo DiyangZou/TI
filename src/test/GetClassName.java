@@ -14,6 +14,6 @@ public class GetClassName {
 	
 	public static void main(String[] args) {
 		GetClassName s = new GetClassName();
-		s.getClassName("Flatten a Multilevel Doubly Linked List");
+		s.getClassName("Find the Longest Substring Containing Vowels in Even Counts");
 	}
 }
